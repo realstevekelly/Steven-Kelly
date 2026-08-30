@@ -1,0 +1,8 @@
+{
+  "name": "The Creator Compass: Design, Create, Launch",
+  "description": "A modern, high-vibration landing page and playbook for creators and local businesses to build their digital machine without technical overwhelm.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
