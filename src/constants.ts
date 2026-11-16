@@ -81,34 +81,34 @@ export const CUSTOMER_PROBLEMS: CustomerProblemMap[] = [
     plainEnglishFix: 'Package your service as an obvious outcome with tiered options, visual proof, and a high-trust landing page.',
     recommendedTopicIds: [2, 5, 7],
     recommendedPromptIds: ['2.1', '5.2', '7.1'],
-    toolsUsed: ['Superhuman Docs', 'Funnel / Page Builder', 'Gemini']
+    toolsUsed: ['Superhuman Docs', 'AI Studio / Vercel / Systeme.io', 'Gemini']
   },
   {
     id: 'leads-go-cold',
     symptom: '“Missed calls and inquiries slip through the cracks.”',
     rootCause: 'No automated welcome sequence, no instant text-back, and no simple pipeline to track who still needs a reply.',
-    plainEnglishFix: 'Install an automated welcome sequence and a 5-stage follow-up pipeline so every inquiry gets nurtured even when you are busy.',
+    plainEnglishFix: 'Install an automated Systeme.io welcome sequence and a 5-stage follow-up pipeline so every inquiry gets nurtured even when you are busy.',
     recommendedTopicIds: [4, 9],
     recommendedPromptIds: ['4.1', '9.1', '9.3'],
-    toolsUsed: ['Email & SMS Automation', 'Google Workspace', 'Superhuman Docs']
+    toolsUsed: ['Systeme.io', 'Google Workspace', 'Superhuman Docs']
   },
   {
     id: 'overwhelmed-random',
     symptom: '“I feel overwhelmed — I post randomly and don’t know what to work on.”',
     rootCause: 'Jumping into tactics without a 90-day target, ideal customer profile, or simple daily scoreboard.',
-    plainEnglishFix: 'Start at Topic 1 to lock in your 90-day goal, single ideal customer, and 5-metric tracker, then multiply one weekly message.',
+    plainEnglishFix: 'Start at Topic 1 to lock in your 90-day goal, single ideal customer, and 5-metric tracker, then multiply one weekly message with Google Pomelli & Gemini.',
     recommendedTopicIds: [1, 3, 8],
     recommendedPromptIds: ['1.1', '1.3', '3.3'],
-    toolsUsed: ['Superhuman Docs', 'Gemini', 'Google Sheets']
+    toolsUsed: ['Superhuman Docs', 'Gemini & NotebookLM', 'Google Pomelli']
   },
   {
     id: 'ready-to-scale',
     symptom: '“We have happy customers, how do we get referrals and repeat business?”',
     rootCause: 'No post-purchase onboarding, testimonial capture habit, or retention check-in rhythm.',
-    plainEnglishFix: 'Turn every completed job into a video testimonial, a follow-up check-in, and a referral loop.',
+    plainEnglishFix: 'Turn every completed job into a video testimonial edited fast in Gling or Camtasia, plus a Systeme.io follow-up and referral loop.',
     recommendedTopicIds: [6, 9],
     recommendedPromptIds: ['6.3', '9.2'],
-    toolsUsed: ['Descript / Mobile Video', 'Email & SMS Automation', 'Superhuman Docs']
+    toolsUsed: ['Camtasia / Gling', 'Systeme.io', 'Superhuman Docs']
   }
 ];
 
@@ -119,52 +119,70 @@ export const LANDSCAPE_TOOLS: LandscapeTool[] = [
     category: 'Command Center & Knowledge Hub',
     plainEnglishRole: 'Your digital headquarters where your goals, offers, copy, SOPs, and daily trackers live in one clean place.',
     bestUsedFor: 'Organizing your 9-topic outputs, client strategy roadmaps, content calendars, and repeatable checklists.',
-    replacesConfusion: 'Replaces scattered sticky notes, lost Google Docs, and "where did I save that prompt?" chaos.',
+    replacesConfusion: 'Replaces scattered sticky notes, lost drafts, and "where did I save that prompt?" chaos.',
     connectedTopicIds: [1, 2, 5, 8, 9]
   },
   {
-    id: 'gemini',
-    name: 'Gemini (AI Strategist)',
-    category: 'Thinking & Drafting Partner',
-    plainEnglishRole: 'Your 24/7 research assistant, copywriter, and strategist. You paste the 27 tailored prompts here to generate drafts in seconds.',
-    bestUsedFor: 'Brainstorming offers, researching local keywords, writing emails, drafting video scripts, and formatting tables.',
+    id: 'gemini-notebooklm',
+    name: 'Gemini & NotebookLM (Gemini Notebook)',
+    category: 'AI Strategist & Research Partner',
+    plainEnglishRole: 'Your 24/7 research assistant and strategist. Paste the 27 prompts into Gemini to draft copy, and load source docs into NotebookLM to master any niche fast.',
+    bestUsedFor: 'Brainstorming offers, researching local keywords, writing emails, summarizing customer notes, and drafting scripts.',
     replacesConfusion: 'Eliminates staring at a blank screen trying to sound like a pro marketer.',
     connectedTopicIds: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   },
   {
     id: 'google-workspace',
-    name: 'Google Workflow Tools',
-    category: 'Daily Operations & Visibility',
-    plainEnglishRole: 'Everyday essentials—Google Sheets, Drive, Calendar, Gmail, and Google Business Profile—that keep leads and bookings organized.',
-    bestUsedFor: 'Tracking 5 daily numbers, hosting lead magnets, managing local map SEO, and sending direct follow-ups.',
-    replacesConfusion: 'Lets you launch immediately using reliable tools you probably already know.',
+    name: 'Google Workspace ($8/mo) & Workflow Tools',
+    category: 'Professional Email & Daily Operations',
+    plainEnglishRole: 'Your branded business email (you@yourdomain.com) on Google Workspace Starter plus Drive, Sheets, Calendar, and Google Business Profile.',
+    bestUsedFor: 'Looking credible on every outreach email, tracking 5 daily numbers in Sheets, and managing local Google Map visibility.',
+    replacesConfusion: 'Replaces amateur "@gmail.com" addresses so leads and email providers actually trust your messages.',
     connectedTopicIds: [1, 3, 4, 9]
   },
   {
-    id: 'funnel-builder',
-    name: 'Funnel & Page Builder (e.g. Systeme.io / Website)',
-    category: 'Digital Storefront',
-    plainEnglishRole: 'The webpage where curious visitors land, learn what problem you solve, and either book a call, request a quote, or buy.',
-    bestUsedFor: 'Lead capture (opt-in) pages, offer breakdown pages, and thank-you pages with a clear next step.',
-    replacesConfusion: 'Replaces bloated 15-page websites that look nice but never ask the visitor to take action.',
-    connectedTopicIds: [2, 4, 7]
+    id: 'namecheap',
+    name: 'Namecheap',
+    category: 'Domain Name & DNS Control',
+    plainEnglishRole: 'Your simple domain registrar where you buy your business web address and point it cleanly to Google Workspace email, Vercel, and Systeme.io.',
+    bestUsedFor: 'Securing clean, memorable local domains and configuring email/site records in one dashboard.',
+    replacesConfusion: 'Keeps your domain ownership safely in your hands instead of locked inside random agency accounts.',
+    connectedTopicIds: [1, 7]
   },
   {
-    id: 'automation-followup',
-    name: 'Email, SMS & Chat Automation',
-    category: '24/7 Follow-Up Engine',
-    plainEnglishRole: 'Automated messages that reply instantly when someone submits a form or misses a call, and stay in touch until they are ready.',
-    bestUsedFor: '7-day welcome series, missed-call text-backs, quote follow-ups, and post-purchase check-ins.',
-    replacesConfusion: 'Stops you from losing $500+ jobs simply because you were on a job site and could not answer.',
-    connectedTopicIds: [4, 7, 9]
+    id: 'modern-web-showcase',
+    name: 'AI Studio + Antigravity + GitHub + Vercel',
+    category: 'Modern Web Design Showcase (Frontend)',
+    plainEnglishRole: 'How we design fast, custom, high-converting web experiences in AI Studio & Google Antigravity, version them in GitHub, and host them free on Vercel.',
+    bestUsedFor: 'Landing pages, interactive bonus tools, calculators, and modern web showcases that stand out from cookie-cutter templates.',
+    replacesConfusion: 'Replaces slow, bloated websites with modern interactive pages hosted at $0/month.',
+    connectedTopicIds: [2, 7]
   },
   {
-    id: 'visual-video',
-    name: 'Visual & Video Studio (Gemini Image / Phone / Descript)',
-    category: 'Trust & Authority Media',
-    plainEnglishRole: 'Simple tools for turning plain phone clips and clean graphics into trustworthy before/after proof and tutorials.',
-    bestUsedFor: 'Short vertical videos, 3-5 minute YouTube answers, infographics, and customer video reviews.',
-    replacesConfusion: 'Proves you do not need expensive camera crews—clarity and real customer stories win.',
+    id: 'systeme-io',
+    name: 'Systeme.io',
+    category: 'Backend Funnel & Follow-Up Engine',
+    plainEnglishRole: 'The reliable backend that captures leads, sends your 7-day welcome emails, tags contacts, and runs follow-up workflows automatically.',
+    bestUsedFor: 'Opt-in forms, email sequences, lead tagging, simple funnels, and automated post-purchase nurture.',
+    replacesConfusion: 'Replaces duct-taping 5 expensive email and funnel subscriptions together.',
+    connectedTopicIds: [2, 4, 7, 8, 9]
+  },
+  {
+    id: 'google-pomelli',
+    name: 'Google Pomelli',
+    category: 'Brand DNA & Social Campaigns',
+    plainEnglishRole: 'Google Labs’ AI branding partner that learns your Business DNA (colors, fonts, voice) and generates on-brand social posts, visuals, and animations.',
+    bestUsedFor: 'Consistent social media campaigns, product/service promo graphics, and brand-matched visual assets across channels.',
+    replacesConfusion: 'Stops your Instagram, Facebook, and landing graphics from looking mismatched or DIY.',
+    connectedTopicIds: [3, 5, 8]
+  },
+  {
+    id: 'techsmith-gling',
+    name: 'Snagit · Camtasia (TechSmith) · Gling',
+    category: 'Visual Proof & Video Editing Suite',
+    plainEnglishRole: 'Snagit captures crisp annotated tutorials, Camtasia polishes screen/tutorial videos, and Gling automatically trims pauses and filler words in minutes.',
+    bestUsedFor: 'Short-form demo Reels/Shorts, YouTube walkthroughs, annotated how-to guides, and customer proof videos.',
+    replacesConfusion: 'Makes editing talking-head and screen-demo videos fast even if you hate complex timelines.',
     connectedTopicIds: [5, 6, 8]
   }
 ];
@@ -273,7 +291,7 @@ export const TOPICS: Topic[] = [
     plainEnglish: "People don't buy hours or technical features—they buy a reliable fix to an expensive headache. Here you package what you do into clear, confident options.",
     solvesProblem: "Fixes 'customers always ask for discounts' or 'people shop around and pick the cheapest competitor.'",
     phase: 1,
-    coreTools: ["Superhuman Docs", "Gemini", "Funnel / Page Builder"],
+    coreTools: ["Superhuman Docs", "Gemini", "Systeme.io"],
     glossary: [
       { term: "Value Stack", meaning: "Listing everything included in your service (core work + fast-start bonus + warranty) so the total value clearly outweighs the price." },
       { term: "Risk Reversal", meaning: "A clear promise or guarantee that takes the fear out of buying from you for the first time." }
@@ -301,7 +319,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me 3 quick questions about what I currently include in my service and what customers hesitate about before buying.",
         whyItMatters: "Your Offer is the heart of the machine. Weak offers require twice the ad spend and hard selling; a strong offer makes Topic 3 (copy) and Topic 7 (funnel pages) convert naturally.",
         beginnerTip: "Remember: a 'bonus' doesn't have to be free physical stuff—it can be a 48-hour turnaround, a 1-page maintenance guide, or a 30-day check-in call.",
-        recommendedTools: ["Gemini", "Superhuman Docs", "Funnel / Page Builder"],
+        recommendedTools: ["Gemini", "Superhuman Docs", "Systeme.io"],
         problemTags: ["traffic-no-sales"],
         expertExample: `**Core Offer:** The 24-Hour Comfort & Efficiency Tune-Up\n- Bonus 1: 18-Point Photo Inspection Report ($95 value)\n- Bonus 2: Priority Emergency Dispatch Pass for 12 Months\n- Guarantee: "If it breaks within 90 days of our tune-up, we return free."`
       },
@@ -353,7 +371,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me my current base price and what high-touch extra a premium client would happily pay 2–3x more for.",
         whyItMatters: "When you only offer one price, the customer's only decision is 'Yes or No.' With 3 clear tiers, the decision shifts to 'Which level fits me best?'",
         beginnerTip: "Even if you offer a free VIP resource or low-ticket starter, having a 'Do It Yourself → Do It With Me → Done For You' ladder shows customers how they can work deeper with you.",
-        recommendedTools: ["Gemini", "Funnel / Page Builder", "Superhuman Docs"],
+        recommendedTools: ["Gemini", "Systeme.io", "Superhuman Docs"],
         problemTags: ["traffic-no-sales"],
         expertExample: `**Tier 1: Diagnostic Audit ($197)** — 1-hour roadmap.\n**Tier 2: Growth System Setup ($997 · Most Popular)** — Full setup + 30-day support.\n**Tier 3: VIP Partner Retainer ($2,500/mo)** — Ongoing management & priority updates.`
       }
@@ -421,7 +439,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me what single action I want the visitor to take on this page (Book a Call, Request Estimate, Download Guide, or Buy).",
         whyItMatters: "Great copy isn't clever—it's clear. This exact messaging gets reused across your emails (Topic 4), landing pages (Topic 7), and social posts (Topic 8).",
         beginnerTip: "Read the generated headline out loud. If it sounds like something you'd actually say across a kitchen table to a customer, keep it!",
-        recommendedTools: ["Gemini", "Funnel / Page Builder", "Superhuman Docs"],
+        recommendedTools: ["Gemini", "Systeme.io", "Superhuman Docs"],
         problemTags: ["traffic-no-sales"],
         expertExample: `**Headline:** "Stop Losing $500+ Local Jobs Every Time You Can't Answer the Phone."\n**Subheadline:** "We install a 24/7 automated response & booking workflow so you stay focused on the job site."`
       },
@@ -447,7 +465,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me to paste 1 real question a customer asked me recently (or 1 quick job story) to multiply.",
         whyItMatters: "Consistency shouldn't require creativity every morning. Answering one customer question well can feed your entire marketing machine for 2 weeks.",
         beginnerTip: "Record a 2-minute voice memo explaining how you solved a customer's problem today, paste the transcript into Gemini with this prompt, and watch 20 assets appear.",
-        recommendedTools: ["Gemini", "Superhuman Docs", "Visual & Video Studio"],
+        recommendedTools: ["Gemini", "Superhuman Docs", "Google Pomelli"],
         problemTags: ["overwhelmed-random", "invisible-online"],
         expertExample: `**Input Story:** Saved a homeowner $1,400 by catching a clogged drain early.\n**Output:** 1) 45s Reel script ("3 warning signs your drain is about to back up"), 2) Email story + inspection CTA, 3) Carousel checklist.`
       }
@@ -461,7 +479,7 @@ export const TOPICS: Topic[] = [
     plainEnglish: "Most people don't buy the very first minute they meet you. Automated email and text sequences send helpful messages on autopilot so you never have to chase anyone manually.",
     solvesProblem: "Fixes 'people download my guide or ask for info and I never hear from them again.'",
     phase: 2,
-    coreTools: ["Email & SMS Automation", "Gemini", "Superhuman Docs"],
+    coreTools: ["Systeme.io", "Gemini", "Superhuman Docs"],
     glossary: [
       { term: "Welcome Sequence", meaning: "A pre-written series of 5–7 friendly emails sent automatically over a week when someone joins your list." },
       { term: "Segmentation / Tagging", meaning: "Labeling contacts by what they clicked or need (e.g., 'Repair' vs. 'New Install') so they only get relevant messages." }
@@ -489,7 +507,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me what free resource, quote, or lead magnet triggers this welcome series.",
         whyItMatters: "Email is still the highest-ROI channel you actually own—no social media algorithm can take away your list.",
         beginnerTip: "Don't wait until all 7 are perfect! Put Days 0, 1, and 2 live first, then add the rest over the weekend.",
-        recommendedTools: ["Email & SMS Automation", "Gemini", "Superhuman Docs"],
+        recommendedTools: ["Systeme.io", "Gemini", "Superhuman Docs"],
         problemTags: ["leads-go-cold"],
         expertExample: `**Day 0 Subject:** Here's your checklist (+ a quick question)\n**Body:** "Hey [First Name], here's the link you requested... Quick question: what's the #1 thing slowing down your [project] right now? Just hit reply—I read every note."`
       },
@@ -515,7 +533,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me the top 2 reasons prospects say 'let me think about it' before buying from me.",
         whyItMatters: "Often 30–50% of lost revenue isn't a 'No'—it's just someone whose kid walked in the room while they were filling out your form.",
         beginnerTip: "If you use SMS, make sure your prompt reminds you to ask permission on the form ('Text me updates about my request').",
-        recommendedTools: ["Email & SMS Automation", "Gemini"],
+        recommendedTools: ["Systeme.io", "Gemini"],
         problemTags: ["leads-go-cold", "traffic-no-sales"],
         expertExample: `**24-Hr SMS:** "Hi [Name], Steven with [Business]—just checking if you had any questions about the estimate we sent over? Happy to jump on a quick 5-min call if helpful."`
       },
@@ -541,7 +559,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me if I sell 1 main service/offer or 2–3 distinct service lines (e.g., repair vs. replacement).",
         whyItMatters: "Sending a 'New Customer Welcome' promo to someone who already paid you last month hurts trust. Clean tags make small lists feel personal.",
         beginnerTip: "Start with just two tags: `lead` and `customer`. You can add interest tags later once your flow is running smoothly.",
-        recommendedTools: ["Email & SMS Automation", "Superhuman Docs", "Gemini"],
+        recommendedTools: ["Systeme.io", "Superhuman Docs", "Gemini"],
         problemTags: ["leads-go-cold"],
         expertExample: `**Tag:** \`status:quoted\` → Stops generic newsletter → Triggers 3-step Quote Follow-Up → Switches to \`status:customer\` once invoice paid.`
       }
@@ -555,7 +573,7 @@ export const TOPICS: Topic[] = [
     plainEnglish: "People judge credibility in 3 seconds by what they see. Clean before-and-after graphics, simple diagrams, and helpful screenshots prove your value faster than paragraphs of text.",
     solvesProblem: "Fixes 'my business looks amateur online' or 'customers don't understand why my service costs more than the cheap guy.'",
     phase: 3,
-    coreTools: ["Gemini", "Visual & Video Studio", "Superhuman Docs"],
+    coreTools: ["Gemini", "Google Pomelli & Snagit", "Superhuman Docs"],
     glossary: [
       { term: "Visual Anchor", meaning: "A clean image or diagram next to your headline that immediately shows the problem you fix or the result you deliver." },
       { term: "Annotation", meaning: "Adding simple arrows, numbers, or callout boxes on a photo or screenshot to show a customer exactly what to look at." }
@@ -583,7 +601,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me what colors I already use (logo/truck/website) or what mood I want (bold & modern vs. warm & neighborly).",
         whyItMatters: "Visual consistency makes a 1-person business look as established as a regional leader—which directly supports higher pricing (Topic 2).",
         beginnerTip: "Once you pick 2 brand colors and 1 style, save them at the top of your Superhuman Docs workspace so every graphic matches effortlessly.",
-        recommendedTools: ["Gemini", "Visual & Video Studio", "Superhuman Docs"],
+        recommendedTools: ["Gemini", "Google Pomelli & Snagit", "Superhuman Docs"],
         problemTags: ["traffic-no-sales", "invisible-online"],
         expertExample: `**AI Image Prompt:** "Editorial documentary photo of a friendly HVAC technician explaining a digital thermostat diagnostic to a smiling homeowner in a bright modern kitchen, natural window light, crisp detail, 16:9."`
       },
@@ -609,7 +627,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me to list the 3 main steps a customer goes through from first contact to finished result.",
         whyItMatters: "A great diagram does the heavy lifting on sales pages (Topic 7) and sales calls—it proves you have a repeatable system, not guesswork.",
         beginnerTip: "Even a clean 3-box slide exported as an image works wonders on your landing page!",
-        recommendedTools: ["Gemini", "Visual & Video Studio", "Funnel / Page Builder"],
+        recommendedTools: ["Gemini", "Google Pomelli & Snagit", "Systeme.io"],
         problemTags: ["traffic-no-sales"],
         expertExample: `**3-Step Graphic:** Step 1: 15-Min Diagnostic → Step 2: Custom System Setup (48 Hrs) → Step 3: 24/7 Automated Follow-Up.`
       },
@@ -635,7 +653,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me which 1 or 2 tools or workflows my audience asks me 'how do you do that?' about most often.",
         whyItMatters: "Teaching with real screenshots builds instant authority. Readers who learn from your guides naturally trust your offers (Topic 2) and tool links.",
         beginnerTip: "Use your built-in Mac/Windows screenshot markup tool or any simple screen recorder—no fancy software required to start.",
-        recommendedTools: ["Superhuman Docs", "Visual & Video Studio", "Gemini"],
+        recommendedTools: ["Superhuman Docs", "Google Pomelli & Snagit", "Gemini"],
         problemTags: ["invisible-online", "overwhelmed-random"],
         expertExample: `**Tutorial #1:** "How to Organize Your Weekly Lead Follow-Up in 10 Minutes Inside Superhuman Docs (Free Template Included)."`
       }
@@ -649,7 +667,7 @@ export const TOPICS: Topic[] = [
     plainEnglish: "Video is the fastest shortcut to 'know, like, and trust.' You don't need studio lighting—just a phone, clear audio, and answers to the exact questions customers already ask you.",
     solvesProblem: "Fixes 'strangers treat me like just another price quote' and builds organic, compounding search traffic.",
     phase: 3,
-    coreTools: ["Visual & Video Studio", "Gemini", "Superhuman Docs"],
+    coreTools: ["Camtasia & Gling", "Gemini", "Superhuman Docs"],
     glossary: [
       { term: "Pattern Interrupt / Hook", meaning: "The first 3–10 seconds of a video that directly names a problem so the right viewer stops scrolling." },
       { term: "B-Roll", meaning: "Quick clips of you working, pointing at a screen, or showing a finished job while your voice keeps explaining." }
@@ -677,7 +695,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me what common mistake or question customers ask me every single week.",
         whyItMatters: "One honest 4-minute video answering a real buyer question can bring you warm, pre-sold leads for years.",
         beginnerTip: "Film using the bullet-point outline instead of reading word-for-word—your natural personality is your biggest advantage.",
-        recommendedTools: ["Visual & Video Studio", "Gemini", "Superhuman Docs"],
+        recommendedTools: ["Camtasia & Gling", "Gemini", "Superhuman Docs"],
         problemTags: ["invisible-online", "traffic-no-sales"],
         expertExample: `**0–3s Hook:** "If your AC runs all day and the house still feels sticky, check this $0 fix before calling anyone."`
       },
@@ -703,7 +721,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me the main topic of the video I'm about to publish and the link I want viewers to click.",
         whyItMatters: "Great videos sit at zero views without searchable titles and clear thumbnails. Optimization turns one recording into evergreen search traffic.",
         beginnerTip: "Keep thumbnail text to 2–4 big, bold words (e.g., 'COSTLY MISTAKE' or '3-STEP FIX') so it's readable on a tiny phone screen.",
-        recommendedTools: ["Gemini", "Visual & Video Studio"],
+        recommendedTools: ["Gemini", "Google Pomelli & Snagit", "Camtasia & Gling"],
         problemTags: ["invisible-online"],
         expertExample: `**Title:** "3 Signs Your Water Heater Is About to Fail (Austin Homeowner Checklist)"\n**Thumbnail Text:** "REPLACE OR REPAIR?"`
       },
@@ -729,7 +747,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me whether I see customers in person (on-site) or remotely (Zoom/phone).",
         whyItMatters: "One real customer saying 'Here was my problem and how fast they fixed it' outsells 100 marketing claims.",
         beginnerTip: "Right after a customer says 'Thank you so much!', pull out your phone (or send a 1-link prompt) right then—don't wait two weeks!",
-        recommendedTools: ["Visual & Video Studio", "Superhuman Docs", "Email & SMS Automation"],
+        recommendedTools: ["Camtasia & Gling", "Superhuman Docs", "Systeme.io"],
         problemTags: ["ready-to-scale", "traffic-no-sales"],
         expertExample: `**4 Questions:** 1) What was happening before you called us? 2) What made you hesitate? 3) What stood out during the work? 4) What would you tell a neighbor considering us?`
       }
@@ -743,7 +761,7 @@ export const TOPICS: Topic[] = [
     plainEnglish: "A regular website has 12 distracting links. A funnel page removes the clutter and gently walks one type of visitor through Problem → Proof → One Clear Action.",
     solvesProblem: "Fixes 'we get website visitors every week, but almost nobody fills out the form or calls.'",
     phase: 2,
-    coreTools: ["Funnel / Page Builder", "Gemini", "Superhuman Docs"],
+    coreTools: ["AI Studio / Vercel", "Systeme.io", "Namecheap"],
     glossary: [
       { term: "Opt-In / Lead Magnet Page", meaning: "A short, focused page offering a helpful checklist, guide, or instant estimate in exchange for a name and email/phone." },
       { term: "Above the Fold", meaning: "Everything a visitor sees on their screen right when the page loads, before scrolling down." }
@@ -771,7 +789,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me what free lead magnet, diagnostic audit, or fast-quote promise visitors receive when they submit the form.",
         whyItMatters: "Sending paid ads or social traffic to a cluttered homepage wastes clicks. A focused landing page captures leads so Topics 4 and 9 can convert them.",
         beginnerTip: "Keep your form to 2 or 3 fields max (Name + Email or Phone). Every extra required field drops conversions.",
-        recommendedTools: ["Funnel / Page Builder", "Gemini", "Superhuman Docs"],
+        recommendedTools: ["AI Studio / Vercel", "Systeme.io", "Gemini"],
         problemTags: ["traffic-no-sales"],
         expertExample: `**Hero:** "[Austin Homeowners] Get Your Free 15-Point Pre-Summer AC Check & Flat-Rate Quote in 60 Seconds"\n**Thank-You Page:** "Got it! Check your inbox—or grab a priority slot on our calendar right below."`
       },
@@ -797,7 +815,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me the #1 objection I hear right before someone decides to book or pay.",
         whyItMatters: "Your sales page is your best salesperson working 24/7 while you sleep or serve other clients.",
         beginnerTip: "Include a short 'Who this is NOT for' box—ironically, telling wrong-fit buyers politely builds huge trust with the right buyers!",
-        recommendedTools: ["Funnel / Page Builder", "Gemini"],
+        recommendedTools: ["Systeme.io", "Gemini"],
         problemTags: ["traffic-no-sales"],
         expertExample: `**FAQ Example:** "What if I'm not tech-savvy? Every step is mapped in plain English, and if you ever get stuck, you can book a 1-on-1 setup check-in."`
       },
@@ -823,7 +841,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me whether customers buy directly online OR book an estimate/strategy call first.",
         whyItMatters: "Random pages don't make a system. Seeing the whole map on one screen removes tech fear and reveals exactly what to build next.",
         beginnerTip: "Draw this 4-box map on a single sheet of paper or inside Superhuman Docs before building a single button in software.",
-        recommendedTools: ["Superhuman Docs", "Funnel / Page Builder", "Email & SMS Automation", "Gemini"],
+        recommendedTools: ["Superhuman Docs", "AI Studio / Vercel", "Systeme.io", "Gemini"],
         problemTags: ["overwhelmed-random", "leads-go-cold"],
         expertExample: `**4-Box Flow:** Local Post/Video → 60s Quote/Guide Page (25% opt-in) → Calendar/Offer Page (20% book) → Automated SMS/Email Confirmation.`
       }
@@ -837,7 +855,7 @@ export const TOPICS: Topic[] = [
     plainEnglish: "Social media isn't about chasing viral likes—it's about showing up consistently with helpful proof so people in your market remember you when they need help.",
     solvesProblem: "Fixes 'we post randomly once a month and get 2 likes and zero customers.'",
     phase: 3,
-    coreTools: ["Superhuman Docs", "Gemini", "Visual & Video Studio"],
+    coreTools: ["Superhuman Docs", "Gemini", "Google Pomelli & Snagit"],
     glossary: [
       { term: "80/20 Value Rule", meaning: "80% helpful tips, stories, and behind-the-scenes proof; 20% direct invitations to book, download, or buy." },
       { term: "Social-to-Pipeline Bridge", meaning: "Moving an interested commenter into a friendly DM, text, or email opt-in instead of hoping they search your website later." }
@@ -865,7 +883,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me which 1 or 2 platforms my buyers actually check (Facebook, Instagram, LinkedIn, Nextdoor, or YouTube).",
         whyItMatters: "Consistency beats intensity. Three helpful posts a week for 90 days changes how an entire local market sees you.",
         beginnerTip: "Batch-write 4 posts on Sunday in 30 minutes using your Superhuman Docs calendar, then forget about content for the rest of the week.",
-        recommendedTools: ["Superhuman Docs", "Gemini", "Visual & Video Studio"],
+        recommendedTools: ["Superhuman Docs", "Gemini", "Google Pomelli & Snagit"],
         problemTags: ["invisible-online", "overwhelmed-random"],
         expertExample: `**Wed Post (Behind-the-Scenes):** Photo of diagnostic tool + Caption: "What $0 in maintenance looks like after 3 summers—and the 10-minute habit that prevents this $2,200 repair."`
       },
@@ -917,7 +935,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me what low-friction freebie or conversation starter I'd feel comfortable sending people in DMs.",
         whyItMatters: "Most beginners think social sales happen automatically from links in bio. In reality, 70% of early deals happen inside simple, helpful DMs.",
         beginnerTip: "Keep your DM messages short like texts—1 or 2 sentences at a time, ending with an easy yes/no question.",
-        recommendedTools: ["Superhuman Docs", "Gemini", "Email & SMS Automation"],
+        recommendedTools: ["Superhuman Docs", "Gemini", "Systeme.io"],
         problemTags: ["traffic-no-sales", "leads-go-cold"],
         expertExample: `**Permission Transition:** "Makes total sense. I actually put together a 1-page breakdown on how we fix that—want me to shoot the link over so you can look at it whenever you have 2 minutes?"`
       }
@@ -931,7 +949,7 @@ export const TOPICS: Topic[] = [
     plainEnglish: "The fortune—and peace of mind—is in the follow-up. These workflows catch missed inquiries automatically, guide quotes to a decision, and turn one-time buyers into repeat clients and referrals.",
     solvesProblem: "Fixes 'we spend money/time getting leads, then forget to follow up twice and lose the job to someone slower.'",
     phase: 2,
-    coreTools: ["Email & SMS Automation", "Google Workspace", "Superhuman Docs"],
+    coreTools: ["Systeme.io", "Google Workspace", "Superhuman Docs"],
     glossary: [
       { term: "Speed-to-Lead", meaning: "How fast a new caller or form lead hears back. Replying within 5 minutes increases close rates dramatically." },
       { term: "Sales Pipeline", meaning: "Visual columns (New Lead → Contacted → Quote Sent → Won) showing every opportunity so nobody gets forgotten." }
@@ -959,7 +977,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me how long a typical customer takes to decide after asking for pricing (same day, 1 week, or 1–3 months).",
         whyItMatters: "Up to 50% of buyers hire the first business that responds clearly—and another 30% buy weeks later only because you stayed politely visible.",
         beginnerTip: "Even before buying fancy software, saving these 3 quick text templates in your phone's Notes app lets you reply in 10 seconds!",
-        recommendedTools: ["Email & SMS Automation", "Google Workspace", "Gemini"],
+        recommendedTools: ["Systeme.io", "Google Workspace", "Gemini"],
         problemTags: ["leads-go-cold"],
         expertExample: `**Instant Missed-Call Text:** "Sorry we missed your call at [Business Name]! We're helping a customer right now—how can we help you today? Reply here and we'll take care of you."`
       },
@@ -985,7 +1003,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me what happens right after a customer pays me today, and whether I offer repeat maintenance or related services.",
         whyItMatters: "Keeping and delighting an existing customer costs a fraction of finding a stranger—and 5-star reviews power Topic 3 (local search) and Topic 7 (page trust).",
         beginnerTip: "Create your direct Google Review short link today and save it in Superhuman Docs so it's always one copy-paste away.",
-        recommendedTools: ["Email & SMS Automation", "Google Business Profile", "Superhuman Docs"],
+        recommendedTools: ["Systeme.io", "Google Business Profile", "Superhuman Docs"],
         problemTags: ["ready-to-scale"],
         expertExample: `**Day 7 Review Text:** "Hey [Name], thanks again for trusting us with your [project]! If everything is running great, would you mind tapping this 30-second link to share a quick review? It helps neighbors find us: [Link]"`
       },
@@ -1011,7 +1029,7 @@ export const TOPICS: Topic[] = [
         clarifyingStep: "Ask me roughly how many active leads or quotes I juggle in a typical week.",
         whyItMatters: "A simple pipeline gives you instant calm—you stop waking up at 2am wondering 'Did I ever call Sarah back?' because the board remembers for you.",
         beginnerTip: "You can run this entire 6-column pipeline inside a single Superhuman Docs table or Google Sheet from Day 1.",
-        recommendedTools: ["Superhuman Docs", "Google Sheets", "Email & SMS Automation"],
+        recommendedTools: ["Superhuman Docs", "Google Sheets", "Systeme.io"],
         problemTags: ["leads-go-cold", "overwhelmed-random"],
         expertExample: `**Golden Rule of the Pipeline:** No contact is allowed to sit in 'Quote Sent' without a scheduled Next Follow-Up Date (Day 2, Day 5, Day 12).`
       }

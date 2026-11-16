@@ -1038,13 +1038,13 @@ export default function App() {
                     {[
                       {
                         id: 'superhuman_google' as ToolPreference,
-                        title: 'Superhuman Docs + Google',
-                        desc: 'Gemini, Superhuman Docs, Sheets & Business Profile'
+                        title: 'Full Modern Growth Stack',
+                        desc: 'Superhuman Docs, Gemini/NotebookLM, Pomelli, Google Workspace, Systeme.io & AI Studio/Vercel'
                       },
                       {
                         id: 'all_in_one' as ToolPreference,
-                        title: 'All-in-One Funnel Stack',
-                        desc: 'Superhuman Docs + Gemini + Systeme.io / GoHighLevel'
+                        title: 'Lean Starter Stack',
+                        desc: 'Google Workspace ($8/mo) + Gemini + Superhuman Docs + Systeme.io'
                       },
                       {
                         id: 'custom' as ToolPreference,

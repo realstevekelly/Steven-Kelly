@@ -294,19 +294,24 @@ export default function LandingPage({
               The Tools that Support Our Peace of Mind
             </h2>
             <p className="text-slate-300 mb-10 text-base max-w-2xl mx-auto">
-              A focused, beginner-friendly tool stack to eliminate tech overwhelm and keep you building every day.
+              Modern web design in front, reliable automation in the back, and simple tools that keep you building in calm creative flow.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-6 md:gap-10 items-center">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-5 items-center max-w-4xl mx-auto">
               {[
-                'Gemini 3 Pro',
                 'Superhuman Docs',
-                'Google Workflow Tools',
-                'Affiliate Workflow Tool Stack'
+                'Gemini & NotebookLM',
+                'Google AI Studio & Antigravity',
+                'Google Pomelli',
+                'Google Workspace',
+                'Systeme.io',
+                'Namecheap',
+                'GitHub & Vercel',
+                'Snagit · Camtasia · Gling'
               ].map((tool, i) => (
                 <div
                   key={i}
-                  className="text-lg md:text-xl font-bold tracking-wide text-white border-b-2 border-neon-blue/30 pb-1"
+                  className="text-base md:text-lg font-bold tracking-wide text-white border-b-2 border-neon-blue/30 pb-1"
                 >
                   {tool}
                 </div>

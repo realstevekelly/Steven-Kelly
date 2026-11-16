@@ -3,12 +3,12 @@ import { STEVEN_MENTORSHIP_CONFIG } from '../constants';
 
 export function getToolStackLabel(profile: BusinessProfile): string {
   if (profile.toolPreference === 'all_in_one') {
-    return 'Superhuman Docs, Gemini, and an all-in-one funnel & email/SMS platform (e.g., Systeme.io or GoHighLevel)';
+    return 'Google Workspace ($8/mo pro email & Docs/Sheets), Gemini, Superhuman Docs, and Systeme.io backend';
   }
   if (profile.toolPreference === 'custom' && profile.customTools.trim()) {
     return profile.customTools.trim();
   }
-  return 'Superhuman Docs, Gemini, and Google Workspace Tools (Sheets, Drive, Calendar, Gmail, Business Profile)';
+  return 'Superhuman Docs, Gemini & NotebookLM, Google Workspace, Google Pomelli, Systeme.io (backend funnels/emails), AI Studio + Antigravity + GitHub + Vercel (web design), Namecheap, and Snagit/Camtasia/Gling';
 }
 
 export function injectProfileTokens(text: string, profile: BusinessProfile): string {
