@@ -138,28 +138,28 @@ export default function MentorshipView({
           {callBrief}
         </pre>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
           {STEVEN_MENTORSHIP_CONFIG.bookingUrl ? (
             <a
               href={STEVEN_MENTORSHIP_CONFIG.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="neon-button-blue px-6 py-3 rounded-xl text-sm flex items-center gap-2 whitespace-nowrap"
+              className="neon-button-blue w-full sm:w-auto px-5 py-3 rounded-xl text-sm flex items-center justify-center gap-2 text-center sm:whitespace-nowrap"
             >
-              <Calendar size={16} /> Book a 1-on-1 Session <ArrowRight size={16} />
+              <Calendar size={16} className="shrink-0" /> Book a 1-on-1 Session <ArrowRight size={16} className="shrink-0" />
             </a>
           ) : (
             <a
               href={mailtoHref}
-              className="neon-button-blue px-6 py-3 rounded-xl text-sm flex items-center gap-2 whitespace-nowrap"
+              className="neon-button-blue w-full sm:w-auto px-5 py-3 rounded-xl text-sm flex items-center justify-center gap-2 text-center"
             >
-              <Mail size={16} /> Email My Brief to Steven for Personal Follow-Up <ArrowRight size={16} />
+              <Mail size={16} className="shrink-0" /> <span>Email My Brief to Steven for Personal Follow-Up</span> <ArrowRight size={16} className="shrink-0" />
             </a>
           )}
 
           <button
             onClick={handleCopyBrief}
-            className="px-4 py-3 rounded-xl text-sm font-semibold bg-black/40 border border-white/15 text-white hover:border-neon-blue transition-colors flex items-center gap-2 whitespace-nowrap"
+            className="w-full sm:w-auto px-4 py-3 rounded-xl text-sm font-semibold bg-black/40 border border-white/15 text-white hover:border-neon-blue transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
           >
             {copiedBrief ? <Check size={16} className="text-neon-green" /> : <Copy size={16} />}
             {copiedBrief ? 'Brief Copied!' : 'Copy Call Brief'}
@@ -167,7 +167,7 @@ export default function MentorshipView({
 
           <button
             onClick={handleDownloadRoadmap}
-            className="px-4 py-3 rounded-xl text-sm font-semibold bg-black/40 border border-white/15 text-slate-200 hover:border-white/30 transition-colors flex items-center gap-2 whitespace-nowrap"
+            className="w-full sm:w-auto px-4 py-3 rounded-xl text-sm font-semibold bg-black/40 border border-white/15 text-slate-200 hover:border-white/30 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
           >
             <Download size={16} /> Download Full Roadmap (.md)
           </button>

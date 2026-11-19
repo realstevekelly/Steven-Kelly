@@ -175,6 +175,13 @@ export default function App() {
     localStorage.setItem(STORAGE_KEYS.checkedIn, String(hasCheckedIn));
   }, [hasCheckedIn]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    if (view !== 'landing' && window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }, [view, selectedTopic]);
+
   const activeProfile =
     profiles.find((p) => p.id === activeProfileId) || profiles[0] || createDefaultProfile();
   const activeProgress: WorkspaceProgress =

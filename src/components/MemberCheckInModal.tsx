@@ -36,11 +36,14 @@ export default function MemberCheckInModal({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
       <motion.div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Sign In to Your Workspace"
         initial={{ scale: 0.96, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.96, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="bg-[#16181c] border border-white/15 rounded-3xl p-8 md:p-10 max-w-lg w-full shadow-2xl relative"
+        className="bg-[#16181c] border border-white/15 rounded-3xl p-6 sm:p-8 md:p-10 max-w-lg w-full max-h-[92vh] overflow-y-auto shadow-2xl relative"
       >
         <button
           onClick={onClose}
@@ -124,9 +127,9 @@ export default function MemberCheckInModal({
 
           <button
             type="submit"
-            className="w-full neon-button-blue py-3.5 px-6 rounded-xl text-base flex items-center justify-center gap-2 mt-2"
+            className="w-full neon-button-blue py-3.5 px-4 sm:px-6 rounded-xl text-sm sm:text-base flex items-center justify-center gap-2 mt-2 whitespace-nowrap"
           >
-            Open My Daily Workspace <ArrowRight size={18} />
+            Open My Daily Workspace <ArrowRight size={17} className="shrink-0" />
           </button>
         </form>
 

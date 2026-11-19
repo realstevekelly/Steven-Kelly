@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import {
   ArrowRight,
@@ -5,7 +6,9 @@ import {
   CheckCircle2,
   Shield,
   Layout,
+  Menu,
   Play,
+  X,
   Zap,
   Star,
   Compass,
@@ -21,50 +24,93 @@ interface LandingPageProps {
   returningMemberName?: string;
 }
 
+const NAV_LINKS = [
+  { href: '#system', label: 'The System' },
+  { href: '#about', label: 'Creator Compass' },
+  { href: '#tools', label: 'The Stack' },
+  { href: '#work-with-steven', label: '1-on-1 Help' }
+];
+
 export default function LandingPage({
   onEnter,
   onOpenMentorship,
   returningMemberName
 }: LandingPageProps) {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#121212] text-slate-200 font-sans overflow-x-hidden">
       {/* 1. Nav Menu with CTA (3-Zone Top Bar Contract) */}
-      <nav className="fixed top-0 w-full z-50 bg-black/75 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-8">
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between gap-2 sm:gap-6">
           <a
             href="#top"
             onClick={(e) => {
               e.preventDefault();
+              setMobileNavOpen(false);
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="font-bold text-lg md:text-xl tracking-tight text-neon-blue neon-text-glow whitespace-nowrap shrink-0"
+            className="font-bold text-base sm:text-lg md:text-xl tracking-tight text-neon-blue neon-text-glow whitespace-nowrap shrink-0"
           >
             Design-Create-Launch
           </a>
 
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-            <a href="#system" className="hover:text-white transition-colors whitespace-nowrap shrink-0">
-              The System
-            </a>
-            <a href="#about" className="hover:text-white transition-colors whitespace-nowrap shrink-0">
-              Creator Compass
-            </a>
-            <a href="#tools" className="hover:text-white transition-colors whitespace-nowrap shrink-0">
-              The Stack
-            </a>
-            <a href="#work-with-steven" className="hover:text-white transition-colors whitespace-nowrap shrink-0">
-              1-on-1 Help
-            </a>
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="hover:text-white transition-colors whitespace-nowrap shrink-0"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
-          <button
-            onClick={onEnter}
-            className="neon-button-blue px-5 py-2.5 rounded-xl text-sm flex items-center gap-2 whitespace-nowrap shrink-0"
-          >
-            {returningMemberName ? `Resume (${returningMemberName})` : 'Member Sign In'}
-            <ArrowRight size={16} />
-          </button>
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => {
+                setMobileNavOpen(false);
+                onEnter();
+              }}
+              className="neon-button-blue px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 whitespace-nowrap shrink-0"
+            >
+              <span className="sm:hidden">
+                {returningMemberName ? 'Resume' : 'Sign In'}
+              </span>
+              <span className="hidden sm:inline">
+                {returningMemberName ? `Resume (${returningMemberName})` : 'Member Sign In'}
+              </span>
+              <ArrowRight size={15} className="shrink-0" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setMobileNavOpen((prev) => !prev)}
+              className="md:hidden p-2 rounded-xl border border-white/15 text-slate-200 hover:text-white hover:border-white/30 transition-colors shrink-0"
+              aria-label={mobileNavOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileNavOpen}
+            >
+              {mobileNavOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileNavOpen && (
+          <div className="md:hidden border-t border-white/10 bg-[#121212]/95 backdrop-blur-md px-4 py-3 flex flex-col gap-1">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileNavOpen(false)}
+                className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       <main id="top">
@@ -116,7 +162,7 @@ export default function LandingPage({
         </section>
 
         {/* 2.5 The 30,000 Foot View */}
-        <section className="py-16 px-6 relative z-10 border-y border-white/10 bg-black/25">
+        <section id="system" className="py-16 px-6 relative z-10 border-y border-white/10 bg-black/25 scroll-mt-24">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
@@ -198,7 +244,7 @@ export default function LandingPage({
         </section>
 
         {/* 3. VIP Playbook */}
-        <section id="system" className="py-20 px-6 relative z-10">
+        <section id="hub" className="py-20 px-6 relative z-10 scroll-mt-24">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
@@ -243,7 +289,7 @@ export default function LandingPage({
         </section>
 
         {/* 4. About / Creator Compass */}
-        <section id="about" className="py-20 px-6 relative z-10 bg-black/25">
+        <section id="about" className="py-20 px-6 relative z-10 bg-black/25 scroll-mt-24">
           <div className="max-w-6xl mx-auto flex flex-col items-center gap-12">
             <div className="w-full text-center max-w-4xl space-y-6">
               <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight text-balance">
@@ -288,7 +334,7 @@ export default function LandingPage({
         </section>
 
         {/* 5. Tech Stack */}
-        <section id="tools" className="py-20 px-6 relative z-10 bg-black/40 border-y border-white/10">
+        <section id="tools" className="py-20 px-6 relative z-10 bg-black/40 border-y border-white/10 scroll-mt-24">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
               The Tools that Support Our Peace of Mind
@@ -321,9 +367,9 @@ export default function LandingPage({
         </section>
 
         {/* 6. Work With Steven Bridge + Final CTA */}
-        <section id="work-with-steven" className="py-24 px-6 relative z-10">
+        <section id="work-with-steven" className="py-24 px-6 relative z-10 scroll-mt-24">
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#181a1f] p-8 md:p-10 rounded-3xl border border-neon-blue/35 flex flex-col justify-between space-y-6">
+            <div className="bg-[#181a1f] p-6 sm:p-8 md:p-10 rounded-3xl border border-neon-blue/35 flex flex-col justify-between space-y-6">
               <div className="space-y-3">
                 <p className="text-xs font-semibold text-neon-blue">Step 1 · Build Daily For Free</p>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">
@@ -336,9 +382,9 @@ export default function LandingPage({
               <div className="space-y-3">
                 <button
                   onClick={onEnter}
-                  className="w-full neon-button-blue px-6 py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2"
+                  className="w-full neon-button-blue px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 whitespace-nowrap"
                 >
-                  Go Ahead &amp; Get Started <ArrowRight size={18} />
+                  Go Ahead &amp; Get Started <ArrowRight size={17} className="shrink-0" />
                 </button>
                 <p className="text-xs text-slate-400 text-center">
                   Instant VIP Access · Progress saved daily in your browser
@@ -346,7 +392,7 @@ export default function LandingPage({
               </div>
             </div>
 
-            <div className="bg-[#181a1f] p-8 md:p-10 rounded-3xl border border-neon-raspberry/35 flex flex-col justify-between space-y-6">
+            <div className="bg-[#181a1f] p-6 sm:p-8 md:p-10 rounded-3xl border border-neon-raspberry/35 flex flex-col justify-between space-y-6">
               <div className="space-y-3">
                 <p className="text-xs font-semibold text-neon-raspberry">
                   Step 2 · Personal 1-on-1 Guidance
@@ -361,9 +407,9 @@ export default function LandingPage({
               <div className="space-y-3">
                 <button
                   onClick={onOpenMentorship}
-                  className="w-full py-4 px-6 rounded-xl border border-neon-raspberry text-white bg-neon-raspberry/15 hover:bg-neon-raspberry hover:text-white font-bold text-base transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3.5 sm:py-4 px-4 sm:px-6 rounded-xl border border-neon-raspberry text-white bg-neon-raspberry/15 hover:bg-neon-raspberry hover:text-white font-bold text-sm sm:text-base transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
                 >
-                  <MessageSquareHeart size={18} /> Explore 1-on-1 Guidance
+                  <MessageSquareHeart size={17} className="shrink-0" /> Explore 1-on-1 Guidance
                 </button>
                 <p className="text-xs text-slate-400 text-center">
                   Direct coaching &amp; done-with-you implementation
